@@ -10,4 +10,4 @@ services:
       WORDPRESS_DB_PASSWORD: admin321
       WORDPRESS_DB_NAME: databaseDockerProject
     volumes:
-      - ./wp-content:/var/www/html/wp-content
+      - /mnt/efs/wordpress:/var/www/html
