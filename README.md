@@ -86,6 +86,7 @@ services:
 O user_data.sh consiste em:
 
 ```sh
+#!/bin/bash
 # Responsável por atualizar o sistema
 sudo yum update -y
 # Instalar o docker
