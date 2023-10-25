@@ -66,7 +66,8 @@ O Load Balancer escolhido para esta atividade foi o Application Load Balancer, d
 # SCRIPT E ARQUIVO DE IMAGEM .YAML
 
 Para está seção, foi criado um arquivo .yaml no meu github pessoal e posteriormente eu chamo esse arquivo no user_data.sh que ficará no template de inicialização de cada uma das máquinas que será inicializada no autoscaling.
-```
+
+```yaml
 version: '3.7'
 services:
   wordpress:
@@ -83,7 +84,8 @@ services:
 ```
 
 O user_data.sh consiste em:
-```
+
+```sh
 # Responsável por atualizar o sistema
 sudo yum update -y
 # Instalar o docker
