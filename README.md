@@ -53,15 +53,92 @@ SG para RDS:
 
 O Load Balancer escolhido para esta atividade foi o Application Load Balancer, devido a sua vantagem em comparação ao classic que é a utilização de target groups.
 
+A criação do load balancer, segue as seguintes etapas: 
+ - Ir para a seção de load balancers na AWS
+ - Clicar em criar lod balancer
+ - Selecionar o tipo de "Application Load Balancer"
+ - Inserir o nome do load balancer
+ - Selecionar o esquema "Voltado para internet" 
+ - Selecionar tipo de endereço IP como "IPv4"
+ - Mapear as subnets públicas de cada AZ
+ - Criar o grupo de segurança para o load balancer
+ - Nos listerners e roteamento, selecionar o target group criado
+
+### TARGET GROUP
+
+Para configurar o target group, basta seguir as seguintes etapas: 
+ - Ir para a seção de grupos de destino na AWS.
+ - Clicar em criar grupo de destino
+ - Na configuração básica selecionar instâncias
+ - Inserir o nome do grupo de estino
+ - Selecionar o protocolo e a porta, que nesse caso será "HTTP" e "80" "respectivamente
+ - O tipo de endereço IP será o "IPv4"
+ - Selecionar a VPC que estarão as instâncias EC2
+ - Selecionar o caminho para verificação de integridade, juntamente do protocolo, que serão  "/" e "HTTP" respectivamente.
+ - Depois basta registrar as instâncias, que pode também ser feito posteriormente, voltando para o menu de grupo de destinos e clicando em "ações" e posteriormente em "registrar destinos".
+
 ## Autoscaling
+
+Para a configuração do autoscaling, inicialmente foi criado o launcher template que utiliza o script de user_data.sh.
+
+A configuração do autoscaling segue essas etapas:
+ - Ir para a seção de "Grupos do Auto Scaling
+ - Clicar em "criar grupo do Auto Scaling"
+ - Inserir nome do 
+ - Selecionar o launcher template criado
+ - Selecionar a VPC adequada
+ - Selecionar as subnets privadas que as instâncias serão criadas
+ - Em balanceador de carga, pode-se selecionar o já criado, ou criar posteriormente
+ - Habilitar coleta de métricas de grupo no CloudWatch ( É opcional )
+ - Selecionar a capacidade desejada, mínima e máxima como 2 
+ - 
+ - 
+
+### LAUNCHER TEMPLATE
+
+Para o modelo de execução, foi escolhida a configuração de uma máquina dentro o free tier:
+ - Amazon Linux 2
+ - t2.micro
+ - "Par de chaves" criada para a atividade
+ - Grupo de segurança seguindo o especificado nas seções anteriores
+ - Armazenamento do tipo GP2 com 8GB
+ - Utiliza um script e user_data
 
 
 ## EFS
 
+Para criar o Elastic File System, basta:
+
+ - Ir para a seção e EFS na AWS.
+ - Clicar em "Criar sistema de arquivos"
+ - Digitar o nome para o EFS 
+ - Selecionar  VPC que ele ficará
 
 ## RDS
 
-
+O RDS foi configurado seguindo as etapas:
+ - Ir para a seção e RDS na AWS.
+ - Ir no menu de "Banco de dados"
+ - Clicar em "Criar banco de dados" 
+ - Selecionar Método de criação padrão
+ - Selecionar mecanismo de MySQL
+ - Selecionar o modelo de nível gratuito
+ - Inserir o nome de indentificador da instância
+ - Configurar nome do usuário
+ - Configurar senha do usuário
+ - Escolher configuração de instância foi "db.t3.micro"
+ - Escolher armazenamento gp2
+ - Em conectividade marcar opção "não se conectar a um recurso de computação do EC2"
+ - Selecionar Tipo de rede IPv4
+ - Selecionar a VPC que estarão as instâncias e os demais componentes da infraestrutura
+ - Selecionar grupo de sub-redes
+ - Criar grupo de segurança para o RDS
+ - Deixar a zona de disponibilidade como "Sem preferência"
+ - Deixar a atuoridade de certificação como padrão
+ - Selecionar opção de autenticação com senha
+ - Ir em configurações adicionais
+ - Inserir nome do RDS
+ - Backup, monitoramento, criptografia e manutenção são opcionais
 
 # SCRIPT E ARQUIVO DE IMAGEM .YAML
 
