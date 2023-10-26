@@ -91,8 +91,6 @@ A configuração do autoscaling segue essas etapas:
  - Em balanceador de carga, pode-se selecionar o já criado, ou criar posteriormente
  - Habilitar coleta de métricas de grupo no CloudWatch ( É opcional )
  - Selecionar a capacidade desejada, mínima e máxima como 2 
- - 
- - 
 
 ### LAUNCHER TEMPLATE
 
@@ -103,7 +101,6 @@ Para o modelo de execução, foi escolhida a configuração de uma máquina dent
  - Grupo de segurança seguindo o especificado nas seções anteriores
  - Armazenamento do tipo GP2 com 8GB
  - Utiliza um script e user_data
-
 
 ## EFS
 
