@@ -13,6 +13,11 @@ As subseções seguintes contém as étapas de configuração da infraestrutura 
 
 ## VPC
 
+<div align="center">
+  <img src="/public/vpc_resource_map.png" width="200px">
+   <p><em>Resource Map da VPC</em></p>
+</div>
+
 A VPC desta atividade esta dividida entre duas tabelas de rotas, em que uma é dedicada para as subnets privadas e a outra para as subnets públicas, existem duas subnets privadas e duas públicas, a criação das duas privadas é para conter o container docker com o wordpress, para que ele possa ser disponibilizado em um endereço ip privado e não em um público. Ademais, as duas subnets públicas estão criadas para permitir que o load balancer consiga conectar-se a internet a partir das duas AZs que elas estão localizadas ( São em AZs diferentes ), para assim, aumentar a disponibilidade.
 
 Por fim, a tabela de rotas públicas possuí um internet gateway para acessar a internet e a tabela de rotas privadas possuí um NAT gateway para permitir o tráfego apenas de saída mas não de entrada.
