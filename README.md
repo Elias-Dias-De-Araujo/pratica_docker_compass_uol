@@ -14,7 +14,7 @@ As subseções seguintes contém as étapas de configuração da infraestrutura 
 ## VPC
 
 <div align="center">
-  <img src="/public/vpc_resource_map.png" width="600px">
+  <img src="/public/vpc_resource_map.png" width="900px">
    <p><em>Resource Map da VPC</em></p>
 </div>
 
