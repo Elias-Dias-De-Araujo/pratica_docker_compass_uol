@@ -115,6 +115,10 @@ Para criar o Elastic File System, basta:
  - Clicar em "Criar sistema de arquivos"
  - Digitar o nome para o EFS 
  - Selecionar  VPC que ele ficará
+ - Clicar no fyle system criado
+ - Em seguinda "Visualizar detalhes"
+ - Clicar em redes
+ - Substituir o grupo de segurança pelo definido nas seções anteriores
 
 ## RDS
 
