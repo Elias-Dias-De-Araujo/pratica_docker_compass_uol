@@ -105,7 +105,7 @@ Para o modelo de execução, foi escolhida a configuração de uma máquina dent
  - "Par de chaves" criada para a atividade
  - Grupo de segurança seguindo o especificado nas seções anteriores
  - Armazenamento do tipo GP2 com 8GB
- - Utiliza um script e user_data
+ - Utiliza um script de user_data
 
 ## EFS
 
